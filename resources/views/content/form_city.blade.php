@@ -10,7 +10,6 @@
         <div>Miestas sukurtas sėkmingai: {{$name}}</div>
         @endif
 
-    @yield('content_after')
 
     {{--<form method="POST" action="{{route('create.cities')}}">--}}
         {{--City:<br>--}}

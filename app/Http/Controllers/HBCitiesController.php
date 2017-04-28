@@ -34,6 +34,17 @@ class HBCitiesController extends Controller {
         //dd(request()->all());
         //dd($data);
 
+
+//        $data = request()->all();
+//
+//        $record = HBCities::create ([
+//            'name' => $data['city'],
+//        ]);
+//
+//        $cities['record'] = $record;
+//
+//        return view('content.form_city', $cities->toArray());
+
         $data = request()->all();
 
         $record = HBCities::create ([
@@ -41,7 +52,7 @@ class HBCitiesController extends Controller {
         ]);
 
         return view('content.form_city', $record->toArray());
-	}
+    }
 
 
 	/**

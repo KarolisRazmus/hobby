@@ -24,6 +24,15 @@ Route::group(['prefix' => 'people'], function () {
     Route::get('/generate/{count?}', [
         'uses' => 'HBDataGeneratorController@generatePeople'
     ]);
+
+    Route::get('/form/', [
+        'uses' => 'HBPeopleController@form'
+    ]);
+
+    Route::post('/form/', [
+        'as' => 'create.person',
+        'uses' => 'HBPeopleController@addPerson'
+    ]);
 });
 
 
@@ -57,6 +66,15 @@ Route::group(['prefix' => 'hobbies'], function () {
     Route::get('/', [
         'uses' => 'HBHobbiesController@index'
     ]);
+
+    Route::get('/form/', [
+        'uses' => 'HBHobbiesController@form'
+    ]);
+
+    Route::post('/form/', [
+        'as' => 'create.hobbies',
+        'uses' => 'HBHobbiesController@addHobby'
+    ]);
 });
 
 
@@ -69,6 +87,7 @@ Route::group(['prefix' => 'people_hobbies_connections'], function () {
     Route::get('/generate/{count?}', [
         'uses' => 'HBDataGeneratorController@generatePeopleHobbiesConnections'
     ]);
+
 });
 
 

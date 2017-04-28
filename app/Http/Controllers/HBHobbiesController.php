@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App\Models\HBHobbies;
 use Illuminate\Routing\Controller;
 
 class HBHobbiesController extends Controller {
@@ -23,6 +24,26 @@ class HBHobbiesController extends Controller {
 	 *
 	 * @return Response
 	 */
+
+
+    public function form()
+    {
+        return view('content.form_hobby');
+    }
+
+    public function addHobby (  )
+    {
+
+        $data = request()->all();
+
+        $record = HBHobbies::create ([
+            'name' => $data['hobby'],
+
+        ]);
+
+        return view('content.form_hobby', $record->toArray());
+    }
+
 	public function create()
 	{
 		//
