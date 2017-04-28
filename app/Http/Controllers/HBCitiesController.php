@@ -36,7 +36,6 @@ class HBCitiesController extends Controller {
 
         $data = request()->all();
 
-
         HBCities::create ([
             'name' => $data['city'],
         ]);
