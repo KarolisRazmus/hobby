@@ -36,10 +36,12 @@ class HBCitiesController extends Controller {
 
         $data = request()->all();
 
-        HBCities::create ([
+        $record = HBCities::create ([
             'name' => $data['city'],
         ]);
 
+        return view('content.new.clients', $record->toArray());
+        //return view('content.form_city');
 	}
 
 

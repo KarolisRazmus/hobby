@@ -3,20 +3,32 @@
 @section('title', trans('app.form_city'))
 
 
+
 @section('content')
 
-    <form method="POST" action="{{route('create.cities')}}">
-        City:<br>
-        <input type="text" name="city" placeholder="write">
-        <br>
-        <input type="submit" value="Submit">
+    @if(isset($name))
+        <div>Miestas sukurtas sėkmingai: {{$name}}</div>
+        @endif
 
-        {{csrf_field()}}
+    @yield('content_after')
 
-    </form>
+    {{--<form method="POST" action="{{route('create.cities')}}">--}}
+        {{--City:<br>--}}
+        {{--<input type="text" name="city" placeholder="write">--}}
+        {{--<br>--}}
+        {{--<input type="submit" value="Submit">--}}
 
-    {!! Form::open(['url' => 'foo/bar']) !!}
-    //
+        {{--{{csrf_field()}}--}}
+
+    {{--</form>--}}
+
+
+    {!! Form::open(['url' => route('create.cities')]) !!}
+
+        {{Form::label('city', 'City')}}
+        {{Form::text('city')}}
+        {{Form::submit('Add city!')}}
+
     {!! Form::close() !!}
 
 @endsection
