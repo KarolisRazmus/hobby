@@ -40,8 +40,7 @@ class HBCitiesController extends Controller {
             'name' => $data['city'],
         ]);
 
-        return view('content.new.clients', $record->toArray());
-        //return view('content.form_city');
+        return view('content.form_city', $record->toArray());
 	}
 
 
